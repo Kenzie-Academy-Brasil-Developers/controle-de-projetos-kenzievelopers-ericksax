@@ -1,6 +1,8 @@
 import express, { Application } from "express";
-import "dotenv/config";
+import { DeveloperRoutes } from "./routes";
 
 const app: Application = express();
+
+app.use("/developers", DeveloperRoutes)
 
 export default app;
