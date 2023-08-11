@@ -1,6 +1,6 @@
 import { Router } from "express";
-import  developerController  from "../controllers";
+import { developerControllers } from "../controllers";
 
-export const DeveloperRoutes = Router()
+export const developerRoutes = Router()
 
-DeveloperRoutes.get("", developerController.read)
+developerRoutes.post("", developerControllers.create)

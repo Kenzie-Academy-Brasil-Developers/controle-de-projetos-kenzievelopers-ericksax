@@ -1,8 +1,8 @@
 import express, { Application } from "express";
-import { DeveloperRoutes } from "./routes";
+import { developerRoutes } from "./routes";
 
 const app: Application = express();
 
-app.use("/developers", DeveloperRoutes)
+app.use("/developers", developerRoutes)
 
 export default app;

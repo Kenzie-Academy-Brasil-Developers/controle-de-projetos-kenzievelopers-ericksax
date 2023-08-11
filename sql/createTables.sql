@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS "developers" (
 
 CREATE TABLE IF NOT EXISTS "developer_infos" (
     "id" SERIAL PRIMARY KEY,
-    "developerSince" TIMESTAMP NOT NULL,
+    "developerSince" DATE NOT NULL,
     "preferredOS" "PREFERRED_OS" NOT NULL,
     "developerId" INTEGER NOT NULL UNIQUE,
     FOREIGN KEY ("developerId")
@@ -16,15 +16,15 @@ CREATE TABLE IF NOT EXISTS "developer_infos" (
         ON DELETE CASCADE
 );
 
-CREATE IF NOT EXISTS "projects" (
+CREATE TABLE IF NOT EXISTS "projects" (
     "id" SERIAL PRIMARY KEY,
     "name" VARCHAR(50) NOT NULL,
     "description" TEXT,
     "repository" VARCHAR(120) NOT NULL,
-    "startDate" TIMESTAMP NOT NULL,
-    "endDate": TIMESTAMP,
+    "startDate" DATE NOT NULL,
+    "endDate" DATE,
     "developerId" INTEGER,
-    FOREIGN KEY "developerId"
+    FOREIGN KEY ("developerId")
         REFERENCES "developers"("id")
         ON DELETE SET NULL
 );

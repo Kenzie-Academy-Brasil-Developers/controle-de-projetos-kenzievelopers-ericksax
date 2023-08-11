@@ -1,10 +1,10 @@
-import { Request, Response } from "express"
-import { developerService } from "../services"
+import { Request, Response } from "express";
+import { developerService } from "../services";
+import { Developer } from "../interfaces";
 
+const create = async (req: Request, res: Response): Promise<Response> => {
+  const developer: Developer = await developerService.create(req.body);
+  return res.status(201).json(developer);
+};
 
-const read = async(req: Request, res: Response): Promise<Response> => {
-    const developers = await developerService.read()
-    return res.status(200).json(developers)
-}
-
-export  { read }
+export default { create };

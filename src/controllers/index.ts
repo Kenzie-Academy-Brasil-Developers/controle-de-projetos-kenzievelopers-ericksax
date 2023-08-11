@@ -1,3 +1,3 @@
-import { read } from "./developer.controllers";
+import developerControllers from "./developer.controllers";
 
-export default { read }
+export { developerControllers }
