@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS "developers" (
     "email" VARCHAR(50) NOT NULL UNIQUE
 );
 
-CREATE TABLE IF NOT EXISTS "developer_infos" (
+CREATE TABLE IF NOT EXISTS "developerInfos" (
     "id" SERIAL PRIMARY KEY,
     "developerSince" DATE NOT NULL,
     "preferredOS" "PREFERRED_OS" NOT NULL,

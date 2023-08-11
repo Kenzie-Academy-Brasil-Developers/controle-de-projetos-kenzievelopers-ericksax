@@ -7,4 +7,19 @@ const create = async (req: Request, res: Response): Promise<Response> => {
   return res.status(201).json(developer);
 };
 
-export default { create };
+const read = async (req: Request, res: Response): Promise<Response> => {
+  const developer: Developer = await developerService.read(req.params.id);
+  return res.status(200).json(developer);
+};
+
+const update = async (req: Request, res: Response): Promise<Response> => {
+  const developer: Developer = await developerService.partialUpdate(req.params.id, req.body);
+  return res.status(200).json(developer);
+};
+
+const destroy = async (req: Request, res: Response): Promise<Response> => {
+  await developerService.destroy(req.params.id);
+  return res.status(204).json()
+};
+
+export default { create, read, update, destroy };
