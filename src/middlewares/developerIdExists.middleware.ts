@@ -3,7 +3,7 @@ import { client } from "../database";
 import { Developer, DeveloperResult } from "../interfaces";
 import { AppError } from "../errors/App.errors";
 
-export const idExists = async(
+export const developerIdExists = async(
     req: Request,
     res: Response,
     next: NextFunction
@@ -11,7 +11,7 @@ export const idExists = async(
     
     const queryString: string = 'SELECT * FROM "developers" WHERE "id" = $1;'
 
-    const id = req.params.id 
+    const id = req.body.developerId 
 
     const queryResult: DeveloperResult = await client.query(queryString, [id])
 

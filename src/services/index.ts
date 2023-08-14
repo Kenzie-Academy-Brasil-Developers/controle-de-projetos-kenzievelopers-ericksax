@@ -1,3 +1,3 @@
 import developerService from './developer.service';
-
-export { developerService }
+import projectServices from './project.services';
+export { developerService , projectServices}

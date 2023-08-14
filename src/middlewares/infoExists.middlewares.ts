@@ -12,7 +12,6 @@ export const infoExists = async(
     
     const queryString: string = 'SELECT * FROM "developerInfos" WHERE "id" = $1;'
     const queryResult: InfoResult = await client.query(queryString, [req.params.id])
-    console.log(queryResult.rows)
 
     if(queryResult.rowCount) {
         throw new AppError('Developer infos already exists.', 409)

@@ -7,16 +7,18 @@ export const emailExists = async (
     req: Request,
     res: Response,
     next: NextFunction
-  ) => {
+  ): Promise<void> => {
     
-    if(!req.body.email) next()
+    if(!req.body.email) return next()
 
-    const queryString: string = 'SELECT "email" FROM "developers" WHERE "email" = $1;'
+    const queryString: string = 'SELECT * FROM "developers" WHERE "email" = $1;'
     const queryResult: DeveloperResult = await client.query(queryString, [req.body.email])
 
     if(queryResult.rowCount) {
         throw new AppError('Email already exists.', 409)
     }
+
+    return next()
   };
   
   
