@@ -1,5 +1,5 @@
 import { client } from "../database";
-import { Project, ProjectRequest, ProjectResult} from "../interfaces";
+import { Project, ProjectRequest, ProjectResult } from "../interfaces";
 import format from "pg-format";
 
 const create = async (payload: ProjectRequest): Promise<Project> => {
@@ -46,10 +46,7 @@ const read = async (developerId: string) => {
   return queryResult.rows[0];
 };
 
-const partialUpdate = async (
-  developerId: string,
-  payload: ProjectRequest
-) => {
+const partialUpdate = async (developerId: string, payload: ProjectRequest) => {
   const queryString: string = format(
     'UPDATE "projects" SET (%I) = ROW(%L) WHERE "id" = $1 RETURNING *',
     Object.keys(payload),

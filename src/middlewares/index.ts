@@ -6,6 +6,7 @@ import { infoExists } from "./infoExists.middlewares";
 import { invalidOS } from "./invalidOSoption.middleweare";
 import { projectExists } from "./projectIdExists.midlewares";
 import { developerIdExists } from "./developerIdExists.middleware";
+
 export default {
   emailExists,
   handleErrors,
@@ -14,5 +15,5 @@ export default {
   infoExists,
   invalidOS,
   projectExists,
-  developerIdExists
+  developerIdExists,
 };

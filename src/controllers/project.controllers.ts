@@ -18,9 +18,11 @@ const retrieve = async (req: Request, res: Response): Promise<Response> => {
 };
 
 const update = async (req: Request, res: Response): Promise<Response> => {
-  const developer: Project = await projectServices.partialUpdate(req.params.id, req.body);
+  const developer: Project = await projectServices.partialUpdate(
+    req.params.id,
+    req.body
+  );
   return res.status(200).json(developer);
 };
 
-
-export default { create, read, update, retrieve};
+export default { create, read, update, retrieve };

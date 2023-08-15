@@ -2,7 +2,7 @@ import {
   Developer,
   DeveloperRequest,
   DeveloperResult,
-} from "./developerSchema";
+} from "./developer.interface";
 import { Infos, InfoRequest, InfoResult } from "./infos.interface";
 import { Project, ProjectRequest, ProjectResult } from "./project.interface";
 

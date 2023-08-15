@@ -7,7 +7,7 @@ type Infos = {
   developerId: number;
 };
 
-type InfoRequest = Omit<Infos, "id">
-type InfoResult = QueryResult<Infos>
+type InfoRequest = Omit<Infos, "id">;
+type InfoResult = QueryResult<Infos>;
 
-export { Infos, InfoRequest, InfoResult }
+export { Infos, InfoRequest, InfoResult };
